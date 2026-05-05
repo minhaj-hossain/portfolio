@@ -24,7 +24,7 @@ Not a website. A *motion experience.*
 
 <br/>
 
-🌐 **[Live Demo →](https://your-live-link-here.com)** &nbsp;·&nbsp; 📬 **[Get In Touch](mailto:your@email.com)**
+🌐 **[Live Demo →](https://minhajs-portfolio.vercel.app)** &nbsp;·&nbsp; 📬 **[Get In Touch](minhaj1080@gmail.com)**
 
 <br/>
 
@@ -60,7 +60,7 @@ Every scroll, hover, and page transition is **choreographed** — not as decorat
 | `/contact` | Interactive high-bandwidth contact section |
 | `*` | Fully animated 404 / Error / Loading states |
 
-**→ [Experience it live](https://your-live-link-here.com)**
+**→ [Experience it live](https://minhajs-portfolio.vercel.app)**
 
 </div>
 
