@@ -34,6 +34,21 @@
   
   --outline: #849495;
   --outline-variant: #3a494b;
+
+  /* Responsive Spacing Tokens */
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+  --spacing-gutter: 16px;
+  --spacing-section-gap: 64px;
+
+  @media (min-width: 768px) {
+    --spacing-stack-sm: 12px;
+    --spacing-stack-md: 24px;
+    --spacing-stack-lg: 48px;
+    --spacing-gutter: 24px;
+    --spacing-section-gap: 120px;
+  }
 }
 
 @theme inline {
@@ -74,11 +89,11 @@
   --font-display: var(--font-plus-jakarta);
   --font-mono: var(--font-space-grotesk);
   
-  --spacing-stack-sm: 12px;
-  --spacing-stack-md: 24px;
-  --spacing-stack-lg: 48px;
-  --spacing-gutter: 24px;
-  --spacing-section-gap: 120px;
+  --spacing-stack-sm: var(--spacing-stack-sm);
+  --spacing-stack-md: var(--spacing-stack-md);
+  --spacing-stack-lg: var(--spacing-stack-lg);
+  --spacing-gutter: var(--spacing-gutter);
+  --spacing-section-gap: var(--spacing-section-gap);
   --spacing-base: 8px;
   --spacing-container-max: 1280px;
 
@@ -121,6 +136,14 @@
 
   .timeline-line {
     background: linear-gradient(to bottom, #00f2ff 0%, transparent 100%);
+  }
+
+  .text-clamp-heading {
+    font-size: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .text-clamp-subheading {
+    font-size: clamp(1.5rem, 5vw, 4rem);
   }
 
   .scanline {

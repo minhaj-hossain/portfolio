@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
 import MagneticButton from "@/components/MagneticButton";
 
@@ -72,20 +73,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-[707px] flex flex-col md:flex-row items-center gap-stack-lg py-section-gap relative overflow-visible">
-      {/* Background Glow */}
+    <section ref={sectionRef} className="min-h-[auto] lg:min-h-[707px] grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-gutter py-16 lg:py-section-gap relative overflow-visible">
+      {/* Background Glow - Scaled for mobile */}
       <div
         ref={glowRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container blur-[160px] rounded-full pointer-events-none z-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-primary-container blur-[80px] md:blur-[160px] rounded-full pointer-events-none z-0"
       ></div>
 
-      <div className="flex-1 space-y-stack-md z-10">
+      <div className="lg:col-span-7 space-y-stack-md z-10">
         <div className="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-container/20 bg-primary-container/5">
           <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f2ff]"></span>
           <span className="font-mono text-[9px] text-primary-container uppercase tracking-widest font-bold">CORE_SYSTEM_ACTIVE</span>
         </div>
 
-        <h1 ref={headingRef} className="font-display text-5xl md:text-8xl font-black text-on-surface leading-[0.95] tracking-tighter uppercase italic">
+        <h1 ref={headingRef} className="font-display text-4xl sm:text-6xl lg:text-[clamp(3.5rem,7.5vw,7.5rem)] font-black text-on-surface leading-[0.95] tracking-tighter uppercase italic max-w-[12ch]">
           <span className="heading-line block">CRAFTING</span>
           <span className="heading-line block text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary-fixed to-secondary">EXPERIENCES</span>
           <span className="heading-line block">THAT MOVE</span>
@@ -111,22 +112,31 @@ export default function Hero() {
 
       <div
         ref={imageContainerRef}
-        className="flex-1 relative w-full aspect-square md:aspect-auto z-10"
+        className="lg:col-span-5 relative w-full aspect-square lg:aspect-auto z-10"
       >
         <InteractiveGlassCard
           animateIn={false}
           className="rounded-3xl p-4"
         >
-          <div className="w-full h-[540px] rounded-2xl bg-surface-container flex items-center justify-center border border-white/5 overflow-hidden relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-surface-container to-background flex items-center justify-center">
-              <span className="material-symbols-outlined text-8xl text-primary-container/5"></span>
-              <p className="absolute bottom-12 font-mono text-[9px] text-on-surface-variant opacity-30 uppercase tracking-[0.4em]">[ IDENTITY_LOCKED ]</p>
-            </div>
+          <div className="w-full h-[300px] sm:h-[400px] lg:h-[540px] rounded-2xl bg-surface-container flex items-center justify-center border border-white/5 overflow-hidden relative group">
+            <Image
+              src="/minhaj.png"
+              alt="Minhaj Hossain"
+              fill
+              priority
+              className="object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-primary-container/5 mix-blend-overlay"></div>
+
+            {/* <p className="absolute bottom-6 left-6 font-mono text-[9px] text-on-surface-variant opacity-50 uppercase tracking-[0.4em] z-10 group-hover:text-primary-container group-hover:opacity-100 transition-all duration-500">
+              [ SUBJECT_01 // ENGINEER ]
+            </p> */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none border-[1px] border-white/5 z-20"></div>
           </div>
-          <div className="absolute bottom-8 left-8 bg-background/60 backdrop-blur-xl p-5 rounded-xl border border-white/10 z-30">
-            <p className="font-mono text-[9px] text-primary-container mb-1 opacity-70">OS_V2.4.0</p>
-            <p className="font-display text-xs text-white font-black tracking-widest uppercase italic">MINHAJ_ARCHITECT</p>
+          <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-background/60 backdrop-blur-xl p-4 md:p-5 rounded-xl border border-white/10 z-30">
+            <p className="font-mono text-[8px] md:text-[9px] text-primary-container mb-1 opacity-70">OS_V2.4.0</p>
+            <p className="font-display text-[10px] md:text-xs text-white font-black tracking-widest uppercase italic">MINHAJ</p>
           </div>
         </InteractiveGlassCard>
       </div>

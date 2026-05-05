@@ -104,30 +104,30 @@ export default function ServicesPage() {
 
   return (
     <main className="max-w-7xl mx-auto px-6 pb-section-gap relative overflow-visible">
-      {/* Dynamic Background Blobs */}
+      {/* Dynamic Background Blobs - Scaled for mobile */}
       <div 
         ref={blob1Ref}
-        className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary-container/10 blur-[160px] rounded-full pointer-events-none -z-10"
+        className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary-container/10 blur-[80px] md:blur-[160px] rounded-full pointer-events-none -z-10"
       ></div>
       <div 
         ref={blob2Ref}
-        className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/10 blur-[140px] rounded-full pointer-events-none -z-10"
+        className="absolute bottom-0 right-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-secondary/10 blur-[70px] md:blur-[140px] rounded-full pointer-events-none -z-10"
       ></div>
 
       {/* Hero */}
-      <section className="py-stack-lg mt-stack-lg flex flex-col items-center text-center">
+      <section className="py-12 md:py-stack-lg mt-8 md:mt-stack-lg flex flex-col items-center text-center">
         <GSAPReveal y={20} duration={0.8}>
-          <span className="font-mono text-primary-fixed uppercase tracking-[0.4em] mb-4 text-[10px] font-bold">
+          <span className="font-mono text-primary-fixed uppercase tracking-[0.4em] mb-4 text-[9px] md:text-[10px] font-bold">
             What I Do
           </span>
         </GSAPReveal>
         <GSAPReveal delay={0.1} y={30} duration={1}>
-          <h2 className="font-display text-4xl md:text-7xl font-extrabold text-on-surface mb-stack-sm max-w-4xl tracking-tighter leading-tight">
-            Engineered Performance. <br/> Fluid Design.
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold text-on-surface mb-stack-sm max-w-4xl tracking-tighter leading-tight">
+            Engineered Performance. <br className="hidden sm:block"/> Fluid Design.
           </h2>
         </GSAPReveal>
         <GSAPReveal delay={0.2} y={30} duration={1}>
-          <p className="font-sans text-lg text-on-surface-variant max-w-2xl mb-stack-lg leading-relaxed">
+          <p className="font-sans text-base md:text-lg text-on-surface-variant max-w-2xl mb-stack-lg leading-relaxed">
             I translate complex requirements into seamless digital products. Full-stack development, UI engineering, and motion design — all under one roof.
           </p>
         </GSAPReveal>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
                 className="h-full"
                 side={side}
               >
-                <div className="p-stack-lg h-full flex flex-col gap-stack-md relative overflow-hidden">
+                <div className="p-6 md:p-stack-lg h-full flex flex-col gap-stack-md relative overflow-hidden">
                   <div className={`absolute -top-24 -right-24 w-64 h-64 ${service.bgColor} rounded-full blur-3xl group-hover:opacity-100 opacity-50 transition-all duration-700`}></div>
                   
                   {service.isWide ? (
@@ -156,7 +156,7 @@ export default function ServicesPage() {
                           <span className={`material-symbols-outlined ${service.color} text-4xl`}>{service.icon}</span>
                         </div>
                         <h3 className="font-display text-3xl md:text-5xl font-black text-on-surface mb-4 tracking-tighter uppercase">{service.title}</h3>
-                        <p className="font-sans text-lg text-on-surface-variant mb-stack-md max-w-lg leading-relaxed">
+                        <p className="font-sans text-base md:text-lg text-on-surface-variant mb-6 md:mb-stack-md max-w-lg leading-relaxed">
                           {service.description}
                         </p>
                         <div className="flex gap-stack-md">
@@ -165,12 +165,12 @@ export default function ServicesPage() {
                             <span className="font-mono text-[9px] text-on-surface-variant uppercase tracking-widest font-bold">OPTIMIZED</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className={`font-display text-2xl font-black ${service.color}`}>GSAP</span>
+                            <span className={`font-display text-xl md:text-2xl font-black ${service.color}`}>GSAP</span>
                             <span className="font-mono text-[9px] text-on-surface-variant uppercase tracking-widest font-bold">POWERED</span>
                           </div>
                         </div>
                       </div>
-                      <div className="lg:w-1/2 relative min-h-[300px] bg-surface-container rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden kinetic-demo">
+                      <div className="lg:w-1/2 relative min-h-[200px] md:min-h-[300px] bg-surface-container rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden kinetic-demo">
                         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/40"></div>
                         <div className="text-center relative z-10">
                           <span className={`material-symbols-outlined text-7xl ${service.color} opacity-20 animate-pulse`}>animation</span>
@@ -247,7 +247,7 @@ export default function ServicesPage() {
 
       {/* Process */}
       <section className="mb-section-gap">
-        <div className="grid md:grid-cols-3 gap-stack-lg">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-stack-lg">
           {[
             { id: "01", title: "LOGIC_PHASE", desc: "Requirements get broken down into clean architectural decisions before a single line of code is written.", color: "text-secondary" },
             { id: "02", title: "BUILD_PHASE", desc: "Iterative development with regular check-ins and demos. Every commit moves us closer to stability.", color: "text-primary-container" },
@@ -260,9 +260,9 @@ export default function ServicesPage() {
               parallax={index % 2 === 0 ? -10 : 10}
             >
               <div className="flex flex-col gap-4 group">
-                <div className={`font-display text-8xl ${item.color} opacity-10 group-hover:opacity-20 transition-opacity font-black`}>{item.id}</div>
-                <h5 className="font-display text-xl font-bold tracking-tight uppercase -mt-12 ml-4">{item.title}</h5>
-                <p className="text-on-surface-variant text-sm leading-relaxed ml-4">{item.desc}</p>
+                <div className={`font-display text-7xl md:text-8xl ${item.color} opacity-10 group-hover:opacity-20 transition-opacity font-black`}>{item.id}</div>
+                <h5 className="font-display text-lg md:text-xl font-bold tracking-tight uppercase -mt-10 md:-mt-12 ml-4">{item.title}</h5>
+                <p className="text-on-surface-variant text-xs md:text-sm leading-relaxed ml-4 max-w-xs">{item.desc}</p>
               </div>
             </GSAPReveal>
           ))}

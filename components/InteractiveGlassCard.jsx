@@ -2,24 +2,29 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/**
+ * InteractiveGlassCard Component
+ * A premium glassmorphism card with 3D tilt and dynamic glow effects.
+ */
 export default function InteractiveGlassCard({ 
   children, 
   className = "", 
+  glowColor = "rgba(0, 242, 255, 0.15)",
   delay = 0,
-  glowColor = "rgba(0, 242, 255, 0.4)",
   animateIn = true,
-  entranceType = "slide", // 'slide', 'scale', 'fade'
-  side = "bottom" // 'left', 'right', 'bottom', 'top'
+  entranceType = "scale",
+  side = "center"
 }) {
   const cardRef = useRef(null);
   const glowRef = useRef(null);
 
   useEffect(() => {
     const card = cardRef.current;
+    if (!card) return;
+
     let mm = gsap.matchMedia();
-    
+
     mm.add({
       reduceMotion: "(prefers-reduced-motion: no-preference)",
       hasReducedMotion: "(prefers-reduced-motion: reduce)"
@@ -53,7 +58,11 @@ export default function InteractiveGlassCard({
         }
 
         // 2. 3D Tilt Logic - Subtle & Fluid
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
         const handleMouseMove = (e) => {
+          if (isTouch) return; // Disable tilt on touch devices for better UX
+
           const { clientX, clientY } = e;
           const { left, top, width, height } = card.getBoundingClientRect();
           const x = (clientX - left) / width - 0.5;
