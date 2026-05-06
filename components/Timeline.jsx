@@ -8,24 +8,24 @@ import InteractiveGlassCard from "./InteractiveGlassCard";
 
 const timelineData = [
   {
-    period: "2020 - 2024",
-    institution: "University of Science",
-    degree: "B.SC. IN COMPUTER SCIENCE",
+    period: "2025 - 2029",
+    institution: "NORTHERN    UNIVERSITY    BANGLADESH",
+    degree: "B.SC. IN COMPUTER SCIENCE & ENGINEERING",
     description: "Specialized in Software Engineering and Distributed Systems. Developed a high-performance real-time data processing engine for my final thesis.",
     side: "left"
   },
   {
-    period: "2019 - 2020",
-    institution: "Tech Academy Pro",
-    degree: "FULL-STACK CERTIFICATION",
-    description: "Intensive 12-month program focused on modern web architectures, MERN stack, and cloud deployment strategies.",
+    period: "2021 - 2025",
+    institution: "CHAPAINAWABGANJ    POLITECHNICH    INSTITUTE",
+    degree: "DIPLOMA IN COMPUTER SCIENCE & TECHNOLOGY",
+    description: "Completed my diploma",
     side: "right"
   },
   {
-    period: "2017 - 2019",
-    institution: "High School Central",
-    degree: "SCIENCE & MATHEMATICS",
-    description: "Foundation in computational logic and mathematical modeling. Won several regional programming competitions.",
+    period: "2015 - 2020",
+    institution: "BADALGACHHI    GOVT.    MODEL    PILOT    HIGHT    SCHOOL",
+    degree: "S.S.C (SCIENCE) ",
+    description: "Group: Science (Regular), Passed: 2020",
     side: "left"
   }
 ];
@@ -71,7 +71,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-section-gap relative overflow-visible">
+    <section ref={containerRef} className="py-20 px-4 sm:px-0 md:py-section-gap relative overflow-hidden">
       <GSAPReveal y={20}>
         <div className="flex flex-col items-center mb-16 md:mb-24">
           <span className="font-mono text-[10px] text-primary-container uppercase tracking-[0.4em] mb-4 font-bold">Chronology</span>
@@ -83,22 +83,22 @@ export default function Timeline() {
 
       <div className="relative max-w-6xl mx-auto px-6 z-10">
         {/* Vertical Line */}
-        <div 
+        <div
           ref={lineRef}
           className="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-container via-primary-fixed to-transparent origin-top will-change-transform"
         ></div>
-        
+
         <div className="space-y-12 md:space-y-24 relative">
           {timelineData.map((item, index) => (
             <div key={item.institution} className="relative grid grid-cols-[48px_1fr] md:grid-cols-[1fr_100px_1fr] items-center group">
-              
+
               {/* Left Side Content (Desktop: Card or Label) */}
               <div className="hidden md:block">
                 {item.side === "left" ? (
                   <InteractiveGlassCard delay={index * 0.1} side="left">
                     <div className="p-6">
                       <span className="font-mono text-[10px] text-slate-500 mb-2 block uppercase tracking-widest">{item.period}</span>
-                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-tight">{item.institution}</h3>
+                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking">{item.institution}</h3>
                       <p className="font-mono text-[9px] text-primary-container uppercase mb-3 font-bold">{item.degree}</p>
                       <p className="text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
                     </div>
@@ -115,7 +115,7 @@ export default function Timeline() {
 
               {/* Center Dot */}
               <div className="flex justify-start md:justify-center relative z-10">
-                <div 
+                <div
                   ref={(el) => (dotsRef.current[index] = el)}
                   className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-background border-2 border-primary-container shadow-[0_0_15px_#00f2ff] transition-all duration-300"
                 ></div>

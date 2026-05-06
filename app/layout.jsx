@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Minhaj // THE MOTION ARCHITECT",
+  title: "Minhaj - The Journey of a Software Engineer",
   description: "A full-stack MERN engineer from Bangladesh, architecting high-performance web systems.",
 };
 
@@ -37,10 +37,12 @@ export default function RootLayout({ children }) {
         <SpaceBackground />
         <MotionProvider>
           <Navbar />
-          <PageTransition>
-            {children}
-          </PageTransition>
-          <Footer />
+          <div className="overflow-x-hidden w-full flex flex-col items-center">
+            <PageTransition>
+              {children}
+            </PageTransition>
+            <Footer />
+          </div>
         </MotionProvider>
       </body>
     </html>

@@ -5,15 +5,15 @@ import GSAPReveal from "@/components/GSAPReveal";
 import ContactForm from "@/components/ContactForm";
 
 const socials = [
-  { name: "GITHUB", href: "#", color: "text-white" },
-  { name: "LINKEDIN", href: "#", color: "text-white" },
-  { name: "TWITTER", href: "#", color: "text-white" },
-  { name: "DRIBBBLE", href: "#", color: "text-white" }
+  { name: "GITHUB", href: "https://github.com/minhaj-hossain", color: "text-white" },
+  { name: "LINKEDIN", href: "www.linkedin.com/in/hossain-minhaj", color: "text-white" },
+  { name: "X", href: "#", color: "text-white" },
+  { name: "FACEBOOK", href: "https://www.facebook.com/minhaj124568", color: "text-white" }
 ];
 
 export default function ContactPage() {
   return (
-    <main className="min-h-[80vh] relative pt-stack-lg pb-section-gap overflow-hidden">
+    <main className="min-h-[80vh] relative pt-30 pb-section-gap overflow-hidden">
       {/* BG decoratives */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-container blur-[160px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
@@ -69,9 +69,9 @@ export default function ContactPage() {
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {socials.map(social => (
-                    <a 
+                    <a
                       key={social.name}
-                      className="p-4 bg-white/5 border border-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-secondary/30 transition-all group" 
+                      className="p-4 bg-white/5 border border-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-secondary/30 transition-all group"
                       href={social.href}
                     >
                       <span className="font-mono text-[10px] text-slate-400 group-hover:text-secondary font-bold tracking-widest">{social.name}</span>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 { label: "ENCRYPTION", value: "SECURE" },
                 { label: "STATUS", value: "AVAILABLE", color: "text-tertiary-fixed-dim" }
               ].map((stat, idx) => (
-                <GSAPReveal 
+                <GSAPReveal
                   key={stat.label}
                   delay={0.2 + idx * 0.05}
                   y={20}

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import TechStack from "@/components/TechStack";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import Timeline from "@/components/Timeline";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="max-w-7xl mx-auto px-6">
       <Hero />
       <TechStack />
+      <ProjectShowcase />
       <Timeline />
 
       {/* Quote Section */}

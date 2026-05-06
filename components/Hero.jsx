@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
 import MagneticButton from "@/components/MagneticButton";
 
@@ -73,7 +74,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-[auto] lg:min-h-[707px] grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-gutter py-16 lg:py-section-gap relative overflow-visible">
+    <section ref={sectionRef} className="min-h-[auto] lg:min-h-[707px] grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-gutter pt-30  py-16 lg:py-section-gap relative overflow-hidden">
       {/* Background Glow - Scaled for mobile */}
       <div
         ref={glowRef}
@@ -97,16 +98,20 @@ export default function Hero() {
         </p>
 
         <div className="hero-btns-wrapper flex flex-wrap gap-4 pt-4">
-          <MagneticButton
-            className="bg-primary-container text-black/70 text-on-primary-fixed shadow-[0_0_40px_rgba(0,242,255,0.15)]"
-          >
-            INITIATE PROJECT
-          </MagneticButton>
-          <MagneticButton
-            className="border border-white/10 hover:border-primary-container text-on-surface"
-          >
-            VIEW BLUEPRINTS
-          </MagneticButton>
+          <Link href="/contact">
+            <MagneticButton
+              className="bg-primary-container text-black/70 text-on-primary-fixed shadow-[0_0_40px_rgba(0,242,255,0.15)]"
+            >
+              INITIATE PROJECT
+            </MagneticButton>
+          </Link>
+          <Link href="/work">
+            <MagneticButton
+              className="border border-white/10 hover:border-primary-container text-on-surface"
+            >
+              VIEW BLUEPRINTS
+            </MagneticButton>
+          </Link>
         </div>
       </div>
 

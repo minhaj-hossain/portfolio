@@ -191,6 +191,11 @@
     animation: ambient-drift 30s ease-in-out infinite;
     will-change: transform;
   }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
 }
 
 html.lenis {
