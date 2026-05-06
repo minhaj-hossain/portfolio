@@ -9,21 +9,21 @@ import InteractiveGlassCard from "./InteractiveGlassCard";
 const timelineData = [
   {
     period: "2025 - 2029",
-    institution: "NORTHERN    UNIVERSITY    BANGLADESH",
+    institution: "NORTHERN UNIVERSITY BANGLADESH",
     degree: "B.SC. IN COMPUTER SCIENCE & ENGINEERING",
-    description: "Specialized in Software Engineering and Distributed Systems. Developed a high-performance real-time data processing engine for my final thesis.",
+    description: "Currently pursuing my degree with a focus on Software Engineering and Distributed Systems. Actively working on scalable architectures, real-time data processing concepts, and advanced system design through academic projects and research.",
     side: "left"
   },
   {
     period: "2021 - 2025",
-    institution: "CHAPAINAWABGANJ    POLITECHNICH    INSTITUTE",
+    institution: "chapainawabganj polytechnic institute",
     degree: "DIPLOMA IN COMPUTER SCIENCE & TECHNOLOGY",
-    description: "Completed my diploma",
+    description: "Built strong foundations in programming, databases, networking, and system design through practical labs and project- based learning.",
     side: "right"
   },
   {
     period: "2015 - 2020",
-    institution: "BADALGACHHI    GOVT.    MODEL    PILOT    HIGHT    SCHOOL",
+    institution: "BADALGACHHI GOVT. MODEL PILOT HIGH SCHOOL",
     degree: "S.S.C (SCIENCE) ",
     description: "Group: Science (Regular), Passed: 2020",
     side: "left"
@@ -98,7 +98,7 @@ export default function Timeline() {
                   <InteractiveGlassCard delay={index * 0.1} side="left">
                     <div className="p-6">
                       <span className="font-mono text-[10px] text-slate-500 mb-2 block uppercase tracking-widest">{item.period}</span>
-                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking">{item.institution}</h3>
+                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-wide">{item.institution}</h3>
                       <p className="font-mono text-[9px] text-primary-container uppercase mb-3 font-bold">{item.degree}</p>
                       <p className="text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
                     </div>
@@ -106,7 +106,7 @@ export default function Timeline() {
                 ) : (
                   <div className="text-right pr-4">
                     <GSAPReveal x={-20} y={0}>
-                      <h3 className="font-display text-lg font-black text-on-surface uppercase tracking-tight italic">{item.institution}</h3>
+                      <h3 className="font-display text-lg font-black text-on-surface uppercase tracking-wide italic">{item.institution}</h3>
                       <p className="font-mono text-[10px] text-primary-container uppercase mt-1 font-bold">{item.degree}</p>
                     </GSAPReveal>
                   </div>
@@ -127,7 +127,7 @@ export default function Timeline() {
                   <InteractiveGlassCard delay={index * 0.1} side="right">
                     <div className="p-6">
                       <span className="font-mono text-[10px] text-slate-500 mb-2 block uppercase tracking-widest">{item.period}</span>
-                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-tight">{item.institution}</h3>
+                      <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-wide">{item.institution}</h3>
                       <p className="font-mono text-[9px] text-primary-container uppercase mb-3 font-bold">{item.degree}</p>
                       <p className="text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
                     </div>
@@ -136,7 +136,7 @@ export default function Timeline() {
                   <>
                     <div className="hidden md:block text-left pl-4">
                       <GSAPReveal x={20} y={0}>
-                        <h3 className="font-display text-lg font-black text-on-surface uppercase tracking-tight italic">{item.institution}</h3>
+                        <h3 className="font-display text-lg font-black text-on-surface uppercase tracking-wide italic">{item.institution}</h3>
                         <p className="font-mono text-[10px] text-primary-container uppercase mt-1 font-bold">{item.degree}</p>
                       </GSAPReveal>
                     </div>
@@ -145,7 +145,7 @@ export default function Timeline() {
                       <InteractiveGlassCard delay={index * 0.1} side="right">
                         <div className="p-6">
                           <span className="font-mono text-[10px] text-slate-500 mb-2 block uppercase tracking-widest">{item.period}</span>
-                          <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-tight">{item.institution}</h3>
+                          <h3 className="font-display text-lg font-bold text-on-surface mb-1 uppercase tracking-wide">{item.institution}</h3>
                           <p className="font-mono text-[9px] text-primary-container uppercase mb-3 font-bold">{item.degree}</p>
                           <p className="text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
                         </div>

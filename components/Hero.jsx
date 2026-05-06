@@ -140,7 +140,7 @@ export default function Hero() {
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none border-[1px] border-white/5 z-20"></div>
           </div>
           <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-background/60 backdrop-blur-xl p-4 md:p-5 rounded-xl border border-white/10 z-30">
-            <p className="font-mono text-[8px] md:text-[9px] text-primary-container mb-1 opacity-70">OS_V2.4.0</p>
+            <p className="font-mono text-[8px] md:text-[9px] text-primary-container mb-1 opacity-70">OS_V0.0.1</p>
             <p className="font-display text-[10px] md:text-xs text-white font-black tracking-widest uppercase italic">MINHAJ</p>
           </div>
         </InteractiveGlassCard>

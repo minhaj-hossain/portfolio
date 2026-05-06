@@ -19,7 +19,7 @@ export default function Home() {
           <blockquote className="font-display text-2xl sm:text-4xl md:text-6xl text-on-surface max-w-5xl mx-auto italic font-black leading-tight tracking-tighter">
             "Design is not just what it looks like; <br className="hidden sm:block"/> it's how it <span className="text-[#00f2ff] text-glow">moves through time</span>"
           </blockquote>
-          <p className="mt-8 md:mt-stack-md font-mono text-[9px] md:text-[10px] text-on-surface-variant uppercase tracking-[0.3em] font-bold">— MINHAJ // PRINCIPAL ARCHITECT</p>
+          <p className="mt-8 md:mt-stack-md font-mono text-[9px] md:text-[10px] text-on-surface-variant uppercase tracking-[0.3em] font-bold">— MINHAJ</p>
         </div>
       </section>
     </main>
