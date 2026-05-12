@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0f] w-full pt-20 pb-32 border-t border-white/5">
       <div className="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
         <div className="flex flex-col items-center md:items-start">
-          <span className="text-[#00f2ff] font-bold font-mono tracking-wider mb-1">MOTION_ARCHITECT</span>
+          <span className="text-[#00f2ff] font-bold font-mono tracking-wider mb-1">CODE_ENGINEER</span>
           <p className="font-display text-xs text-slate-600 uppercase tracking-widest">© 2025 MINHAJ // ENGINEERED ENERGY</p>
         </div>
         <div className="flex gap-8">

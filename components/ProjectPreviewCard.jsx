@@ -20,7 +20,8 @@ export default function ProjectPreviewCard({
   title, 
   description, 
   tech, 
-  link, 
+  githubLink,
+  liveLink,
   isFeatured = false,
   index = 0
 }) {
@@ -97,10 +98,10 @@ export default function ProjectPreviewCard({
             </div>
             {isFeatured && (
                <Link 
-               href={link}
+               href={liveLink || "#"}
                className="hidden md:flex items-center gap-2 font-mono text-[10px] text-on-surface-variant uppercase tracking-widest hover:text-primary-container transition-colors group/link"
              >
-               Case Study 
+               Visit Live
                <span className="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
              </Link>
             )}
@@ -110,7 +111,7 @@ export default function ProjectPreviewCard({
             {description}
           </p>
 
-          <div className="mt-auto flex flex-wrap justify-between items-end gap-6">
+          <div className="mt-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div className="flex flex-wrap gap-2">
               {tech.map((t) => (
                 <span 
@@ -122,13 +123,30 @@ export default function ProjectPreviewCard({
               ))}
             </div>
 
-            <Link 
-              href={link}
-              className={`flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] font-bold py-3 px-6 rounded-full border border-white/10 bg-white/5 hover:bg-primary-container/10 hover:border-primary-container/40 transition-all duration-500 ${isFeatured ? 'md:hidden' : 'w-full justify-center md:w-auto'}`}
-            >
-              View Case Study
-              <span className="material-symbols-outlined text-sm">open_in_new</span>
-            </Link>
+            <div className="flex gap-4 w-full md:w-auto">
+              {githubLink && (
+                <a 
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-bold py-3 px-6 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
+                >
+                  <span className="material-symbols-outlined text-base">code</span>
+                  Code
+                </a>
+              )}
+              {liveLink && (
+                <a 
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-bold py-3 px-6 rounded-full border border-primary-container/20 bg-primary-container/5 text-primary-container hover:bg-primary-container/10 hover:border-primary-container/40 transition-all duration-500 shadow-[0_0_15px_rgba(0,242,255,0.1)]"
+                >
+                  <span className="material-symbols-outlined text-base">rocket_launch</span>
+                  Demo
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </InteractiveGlassCard>

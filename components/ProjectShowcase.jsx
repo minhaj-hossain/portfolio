@@ -6,29 +6,32 @@ import ProjectPreviewCard from "@/components/ProjectPreviewCard";
 const showcaseProjects = [
   {
     id: "SHOW_01",
-    title: "EcoSphere Dashboard",
-    description: "A high-performance environmental monitoring dashboard. Real-time data visualization with fluid animations and MERN backend. Engineered for global ecological tracking and predictive analysis.",
-    tech: ["NEXT.JS", "TAILWIND", "D3.JS", "NODE.JS"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
-    link: "/work/ecosphere",
+    title: "Wanderlust",
+    description: "A premium full-stack vacation rental platform engineered with Next.js 15 and React 19. Features a robust property listing system, secure authentication with Better Auth, and a cinematic UI/UX designed for global scaling.",
+    tech: ["NEXT.JS 15", "REACT 19", "MONGODB", "BETTER_AUTH", "TAILWIND 4"],
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop",
+    githubLink: "https://github.com/minhaj-hossain/wanderlust",
+    liveLink: null,
     featured: true
   },
   {
     id: "SHOW_02",
-    title: "NeuroLink UI",
-    description: "Experimental glassmorphism design system for a neural interface application. Focused on accessibility and micro-interactions.",
-    tech: ["TYPESCRIPT", "FRAMER_MOTION", "GSAP"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-    link: "/work/neurolink",
+    title: "AI Model Hub",
+    description: "A futuristic marketplace for cutting-edge AI models. Implements complex shopping cart logic, responsive product grids, and a high-tech aesthetic using the latest React 19 features.",
+    tech: ["REACT 19", "TAILWIND 4", "DAISYUI", "VITE"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    githubLink: "https://github.com/minhaj-hossain/ai_model_hub",
+    liveLink: null,
     featured: false
   },
   {
     id: "SHOW_03",
-    title: "Architect CRM",
-    description: "Custom enterprise CRM for architectural firms. Features complex project management and automated billing workflows.",
-    tech: ["REACT", "MONGODB", "STRIPE"],
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    link: "/work/architect-crm",
+    title: "Book Vibe",
+    description: "Interactive library management system featuring data visualization of reading habits. Integrates Chart.js for insightful analytics and a clean, responsive layout for personal collections.",
+    tech: ["REACT", "TAILWIND", "CHART.JS", "VITE"],
+    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2028&auto=format&fit=crop",
+    githubLink: "https://github.com/minhaj-hossain/book_vibe",
+    liveLink: "http://www.book_vibe.surge.sh",
     featured: false
   }
 ];

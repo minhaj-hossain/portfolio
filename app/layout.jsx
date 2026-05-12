@@ -26,6 +26,7 @@ import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
 import PageTransition from "@/components/PageTransition";
 import SpaceBackground from "@/components/SpaceBackground";
+import CinematicLoader from "@/components/CinematicLoader";
 
 export default function RootLayout({ children }) {
   return (
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.variable} ${plusJakartaSans.variable} ${spaceGrotesk.variable} antialiased selection:bg-primary-container selection:text-on-primary-container relative`}>
+        <CinematicLoader />
         <SpaceBackground />
         <MotionProvider>
           <Navbar />
