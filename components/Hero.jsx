@@ -105,11 +105,11 @@ export default function Hero() {
               INITIATE PROJECT
             </MagneticButton>
           </Link>
-          <Link href="/work">
+          <Link href="/Md_Minhaj_Resume.pdf" download='minhaj_hossain_resume.pdf'>
             <MagneticButton
               className="border border-white/10 hover:border-primary-container text-on-surface"
             >
-              VIEW BLUEPRINTS
+              DOWNLOAD RESUME
             </MagneticButton>
           </Link>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
 
@@ -8,13 +9,15 @@ export default function ProjectCard({ project, index }) {
   const imageRef = useRef(null);
   const overlayRef = useRef(null);
   const containerRef = useRef(null);
+  const glowRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Hover Animation
+      // 1. Hover Animation: Image Zoom + Glow Intensification
       const tl = gsap.timeline({ paused: true });
       tl.to(imageRef.current, { scale: 1.1, duration: 0.6, ease: "power2.out" })
-        .to(overlayRef.current, { opacity: 0.2, duration: 0.6, ease: "power2.out" }, 0);
+        .to(overlayRef.current, { opacity: 0.2, duration: 0.6, ease: "power2.out" }, 0)
+        .to(glowRef.current, { opacity: 0.8, scale: 1.1, duration: 0.6, ease: "power2.out" }, 0);
 
       const handleMouseEnter = () => tl.play();
       const handleMouseLeave = () => tl.reverse();
@@ -52,14 +55,26 @@ export default function ProjectCard({ project, index }) {
         side={side}
         className="h-full flex flex-col"
       >
-        <div className={`relative overflow-hidden bg-surface-container flex items-center justify-center ${project.featured ? 'aspect-video' : 'h-64'}`}>
-          <div ref={imageRef} className="absolute inset-0 flex items-center justify-center">
-             <div className="text-center p-8">
-               <span className="material-symbols-outlined text-5xl text-primary-container/30">image</span>
-               <p className="font-mono text-[10px] text-on-surface-variant mt-2 uppercase tracking-widest">[ {project.id}_SCREENSHOT ]</p>
-             </div>
+        <div className={`relative overflow-hidden bg-surface-container ${project.featured ? 'aspect-video' : 'h-64'}`}>
+          {/* Project Image with Hover Zoom */}
+          <div ref={imageRef} className="absolute inset-0 will-change-transform">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes={project.featured ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+            />
           </div>
-          <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent opacity-60 transition-opacity"></div>
+
+          {/* Cinematic Gradient Overlay */}
+          <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent opacity-60 transition-opacity z-10"></div>
+          
+          {/* Interactive Glow Element */}
+          <div
+            ref={glowRef}
+            className="absolute top-0 right-0 w-48 h-48 bg-primary-container/20 blur-[60px] rounded-full pointer-events-none opacity-0 z-20"
+          ></div>
         </div>
         
         <div className="p-stack-md flex flex-col flex-grow bg-surface-container-low/50 border-t border-white/5 relative z-10">
@@ -71,7 +86,7 @@ export default function ProjectCard({ project, index }) {
           </p>
           
           <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map(tag => (
+            {project.tech.map(tag => (
               <span key={tag} className="font-mono text-[9px] px-2 py-1 bg-white/5 text-slate-400 rounded border border-white/10 group-hover:border-primary-container/20 group-hover:text-primary-container transition-colors">
                 {tag}
               </span>

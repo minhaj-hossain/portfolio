@@ -4,76 +4,20 @@ import { useState, useMemo } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import GSAPReveal from "@/components/GSAPReveal";
 import { motion, AnimatePresence } from "framer-motion";
-
-const projects = [
-  {
-    id: "PROJ_01",
-    title: "Wanderlust",
-    description: "Premium property listing and booking platform built with Next.js 15 and React 19. Features secure auth, MongoDB integration, and high-end responsive animations.",
-    tags: ["NEXT.JS 15", "REACT 19", "MONGODB", "BETTER_AUTH", "TAILWIND 4"],
-    githubLink: "https://github.com/minhaj-hossain/wanderlust",
-    liveLink: null,
-    featured: true
-  },
-  {
-    id: "PROJ_02",
-    title: "AI Model Hub",
-    description: "Futuristic marketplace for AI models with complex state management and a high-tech developer experience.",
-    tags: ["REACT 19", "TAILWIND 4", "DAISYUI", "VITE"],
-    githubLink: "https://github.com/minhaj-hossain/ai_model_hub",
-    liveLink: null,
-    featured: false
-  },
-  {
-    id: "PROJ_03",
-    title: "Book Vibe",
-    description: "Personal library tracker with interactive data visualization using Chart.js to monitor reading habits.",
-    tags: ["REACT", "TAILWIND", "CHART.JS", "VITE"],
-    githubLink: "https://github.com/minhaj-hossain/book_vibe",
-    liveLink: "http://www.book_vibe.surge.sh",
-    featured: false
-  },
-  {
-    id: "PROJ_04",
-    title: "Dragon News",
-    description: "High-performance news portal with dynamic routing and optimized content layout using Next.js features.",
-    tags: ["NEXT.JS", "REACT", "TAILWIND"],
-    githubLink: "https://github.com/minhaj-hossain/dragon_news",
-    liveLink: null,
-    featured: true
-  },
-  {
-    id: "PROJ_05",
-    title: "Pixgen",
-    description: "AI image generation dashboard featuring social authentication and a sleek SaaS-like management interface.",
-    tags: ["NEXT.JS", "GOOGLE_AUTH", "FRAMER_MOTION", "TAILWIND"],
-    githubLink: "https://github.com/minhaj-hossain/pixgen",
-    liveLink: "https://pixgen-sage.vercel.app",
-    featured: false
-  },
-  {
-    id: "PROJ_06",
-    title: "BPL Dream",
-    description: "Fantasy sports management platform for the BPL, implementing complex team-building logic and real-time state.",
-    tags: ["REACT", "TAILWIND", "CONTEXT_API", "VITE"],
-    githubLink: "https://github.com/minhaj-hossain/bpl-dream",
-    liveLink: null,
-    featured: false
-  }
-];
+import { projects } from "@/data/projects";
 
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("ALL");
 
   const allTags = useMemo(() => {
     const tags = new Set(["ALL"]);
-    projects.forEach(p => p.tags.forEach(t => tags.add(t)));
+    projects.forEach((p) => p.tech.forEach((t) => tags.add(t)));
     return Array.from(tags).sort();
   }, []);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "ALL") return projects;
-    return projects.filter(p => p.tags.includes(activeFilter));
+    return projects.filter((p) => p.tech.includes(activeFilter));
   }, [activeFilter]);
 
   return (
