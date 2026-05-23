@@ -16,6 +16,62 @@
  */
 
 export const projects = [
+
+  {
+    id: "mediqueue",
+    title: "mediqueue",
+    description:
+      "A tutor booking platform where students can browse tutors, book learning sessions, and manage their scheduled classes easily. The system helps avoid scheduling conflicts and provides a smooth learning experience through digital booking management.",
+    tech: ["NEXT.JS 15", "REACT 19", "MONGODB", "BETTER_AUTH", "JWT", "FRAMER_MOTION", "TAILWIND 4"],
+    image: "/projects/mediqueue-banner.png",
+    githubLink: "https://github.com/minhaj-hossain/mediqueue",
+    liveLink: "https://mediqueue-vert.vercel.app",
+    featured: true,
+  },
+  {
+    id: "novalend",
+    title: "Novalend",
+    description:
+      "A sophisticated book borrowing and lending platform designed for passionate readers. Features personalized book recommendations, interactive member reviews, dynamic category filtering, and an automated lending tracker.",
+    tech: ["REACT", "TAILWIND", "MONGODB", "EXPRESS", "NODE.JS"],
+    image: "/projects/novalend-banner.png",
+    githubLink: "https://github.com/minhaj-hossain/Novalend",
+    liveLink: null,
+    featured: false,
+  },
+  {
+    id: "book-vibe",
+    title: "Book Vibe",
+    description:
+      "Interactive library management system featuring data visualization of reading habits. Integrates Chart.js for insightful analytics and a clean, responsive layout for personal collections.",
+    tech: ["REACT", "TAILWIND", "CHART.JS", "VITE"],
+    image: "/projects/book-vibe-banner.png",
+    githubLink: "https://github.com/minhaj-hossain/book_vibe",
+    liveLink: "http://www.book_vibe.surge.sh",
+    featured: false,
+  },
+  {
+    id: "digitools",
+    title: "DigiTools",
+    description:
+      "An all-in-one productivity and software-as-a-service platform offering premium AI utilities, professional resume builders, secure cloud backups, and real-time team collaboration tools under a unified subscription pricing model.",
+    tech: ["REACT", "TAILWIND", "MONGODB", "EXPRESS", "NODE.JS", "STRIPE"],
+    image: "/projects/digitools-banner.png",
+    githubLink: "https://github.com/minhaj-hossain/DigiTools_Platform",
+    liveLink: null,
+    featured: true,
+  },
+  {
+    id: "pixgen",
+    title: "Pixgen",
+    description:
+      "AI image generation dashboard featuring social authentication with Google and a sleek SaaS-like management interface. Delivers a premium creative workflow with real-time generation previews.",
+    tech: ["NEXT.JS", "BETTER_AUTH", "FRAMER_MOTION", "TAILWIND"],
+    image: "/projects/pixgen-banner.png",
+    githubLink: "https://github.com/minhaj-hossain/pixgen",
+    liveLink: "https://pixgen-sage.vercel.app",
+    featured: false,
+  },
   {
     id: "wanderlust",
     title: "Wanderlust",
@@ -26,62 +82,7 @@ export const projects = [
     githubLink: "https://github.com/minhaj-hossain/wanderlust",
     liveLink: null,
     featured: true,
-  },
-  {
-    id: "ai-model-hub",
-    title: "AI Model Hub",
-    description:
-      "A futuristic marketplace for cutting-edge AI models. Implements complex shopping cart logic, responsive product grids, and a high-tech aesthetic using the latest React 19 features.",
-    tech: ["REACT 19", "TAILWIND 4", "DAISYUI", "VITE"],
-    image: "/projects/proj-02.png",
-    githubLink: "https://github.com/minhaj-hossain/ai_model_hub",
-    liveLink: null,
-    featured: false,
-  },
-  {
-    id: "book-vibe",
-    title: "Book Vibe",
-    description:
-      "Interactive library management system featuring data visualization of reading habits. Integrates Chart.js for insightful analytics and a clean, responsive layout for personal collections.",
-    tech: ["REACT", "TAILWIND", "CHART.JS", "VITE"],
-    image: "/projects/proj-03.png",
-    githubLink: "https://github.com/minhaj-hossain/book_vibe",
-    liveLink: "http://www.book_vibe.surge.sh",
-    featured: false,
-  },
-  {
-    id: "dragon-news",
-    title: "Dragon News",
-    description:
-      "High-performance news portal with dynamic routing, category-based filtering, and optimized content layout. Built with Next.js for server-side rendering and blazing-fast page transitions.",
-    tech: ["NEXT.JS", "REACT", "TAILWIND"],
-    image: "/projects/proj-04.png",
-    githubLink: "https://github.com/minhaj-hossain/dragon_news",
-    liveLink: null,
-    featured: true,
-  },
-  {
-    id: "pixgen",
-    title: "Pixgen",
-    description:
-      "AI image generation dashboard featuring social authentication with Google and a sleek SaaS-like management interface. Delivers a premium creative workflow with real-time generation previews.",
-    tech: ["NEXT.JS", "GOOGLE_AUTH", "FRAMER_MOTION", "TAILWIND"],
-    image: "/projects/proj-05.png",
-    githubLink: "https://github.com/minhaj-hossain/pixgen",
-    liveLink: "https://pixgen-sage.vercel.app",
-    featured: false,
-  },
-  {
-    id: "bpl-dream",
-    title: "BPL Dream",
-    description:
-      "Fantasy sports management platform for the BPL, implementing complex team-building logic, real-time state management, and an interactive player selection interface.",
-    tech: ["REACT", "TAILWIND", "CONTEXT_API", "VITE"],
-    image: "/projects/proj-06.png",
-    githubLink: "https://github.com/minhaj-hossain/bpl-dream",
-    liveLink: null,
-    featured: false,
-  },
+  }
 ];
 
 /** Projects shown on the Home page (featured hero section) */
