@@ -2,10 +2,33 @@
 
 import GSAPReveal from "@/components/GSAPReveal";
 import ProjectPreviewCard from "@/components/ProjectPreviewCard";
-import { projects } from "@/data/projects";
+import { useEffect, useState } from "react";
 
 export default function ProjectShowcase() {
   // Home page layout: 1 featured hero + 2 secondary cards
+
+  const [projects, setProjects] = useState([]);
+
+
+  useEffect(() => {
+    const projectsFeching = async () => {
+      try {
+        const res = await fetch(`https://portfolio-server-five-rose.vercel.app/projects`);
+        if (!res.ok) throw new Error("Failed to fetch project data");
+
+        const data = await res.json();
+        setProjects(data);
+      } catch (err) {
+        // FIX 3: Log the error or rethrow it cleanly
+        console.error("Error fetching projects:", err);
+      }
+
+    }
+    projectsFeching();
+  }, [])
+
+
+
   const featuredProject = projects.find((p) => p.featured);
   const secondaryProjects = projects.filter((p) => !p.featured).slice(0, 2);
 
@@ -21,7 +44,7 @@ export default function ProjectShowcase() {
           <div className="max-w-xl">
             <span className="font-mono text-[10px] text-primary-container uppercase tracking-[0.4em] mb-4 font-bold block">Selected Works</span>
             <h2 className="font-display text-4xl md:text-7xl font-black text-on-surface tracking-tighter uppercase italic leading-[0.9]">
-              PROOFS_OF<br/><span className="text-glow">CONCEPT</span>
+              PROOFS_OF<br /><span className="text-glow">CONCEPT</span>
             </h2>
           </div>
           <p className="text-on-surface-variant font-mono text-[10px] md:text-xs uppercase tracking-widest max-w-xs md:text-right leading-relaxed">
@@ -33,13 +56,13 @@ export default function ProjectShowcase() {
       <div className="space-y-12 relative z-10">
         {/* Featured Project */}
         {featuredProject && (
-          <GSAPReveal 
-            y={60} 
-            duration={1.2} 
+          <GSAPReveal
+            y={60}
+            duration={1.2}
             start="top 85%"
           >
-            <ProjectPreviewCard 
-              {...featuredProject} 
+            <ProjectPreviewCard
+              {...featuredProject}
               isFeatured={true}
               index={0}
             />
@@ -49,16 +72,16 @@ export default function ProjectShowcase() {
         {/* Secondary Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {secondaryProjects.map((project, index) => (
-            <GSAPReveal 
+            <GSAPReveal
               key={project.id}
-              y={40} 
+              y={40}
               x={index % 2 === 0 ? -20 : 20}
-              delay={0.2 + (index * 0.1)} 
+              delay={0.2 + (index * 0.1)}
               duration={1}
               start="top 90%"
             >
-              <ProjectPreviewCard 
-                {...project} 
+              <ProjectPreviewCard
+                {...project}
                 isFeatured={false}
                 index={index + 1}
               />
@@ -70,8 +93,8 @@ export default function ProjectShowcase() {
       {/* View All Work Link */}
       <GSAPReveal delay={0.5}>
         <div className="mt-20 flex justify-center">
-          <a 
-            href="/work" 
+          <a
+            href="/work"
             className="group relative inline-flex items-center gap-4 py-4 px-10 overflow-hidden rounded-full border border-white/10 bg-surface-container-low transition-all duration-500 hover:border-primary-container/40"
           >
             <div className="absolute inset-0 bg-primary-container/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>

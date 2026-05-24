@@ -68,7 +68,7 @@ export default function ProjectCard({ project, index }) {
           </div>
 
           {/* Cinematic Gradient Overlay */}
-          <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] to-transparent opacity-60 transition-opacity z-10"></div>
+          <div ref={overlayRef} className="absolute inset-0 bg-linear-to-t from-[#0a0a0f] to-transparent opacity-60 transition-opacity z-10"></div>
           
           {/* Interactive Glow Element */}
           <div
@@ -77,7 +77,7 @@ export default function ProjectCard({ project, index }) {
           ></div>
         </div>
         
-        <div className="p-stack-md flex flex-col flex-grow bg-surface-container-low/50 border-t border-white/5 relative z-10">
+        <div className="p-stack-md flex flex-col grow bg-surface-container-low/50 border-t border-white/5 relative z-10">
           <div className="flex justify-between items-start mb-stack-sm">
             <h2 className="font-display text-xl font-bold text-white group-hover:text-primary-container transition-colors uppercase tracking-tight">{project.title}</h2>
           </div>

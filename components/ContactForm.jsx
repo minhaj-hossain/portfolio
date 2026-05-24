@@ -10,7 +10,7 @@ export default function ContactForm() {
       <div className="mb-stack-md relative z-10">
         <h2 className="font-display text-4xl md:text-5xl font-black text-on-surface tracking-tighter mb-4 uppercase italic">TRANSMIT_DATA</h2>
         <p className="font-sans text-base text-on-surface-variant max-w-md leading-relaxed">
-          Got a project in mind? Describe it below and I'll get back to you within 12 hours. No fluff, just results.
+          Got a project in mind? Describe it below and I&apos;ll get back to you within 12 hours. No fluff, just results.
         </p>
       </div>
 

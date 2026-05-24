@@ -115,7 +115,7 @@ export default function SpaceBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none -z-50 overflow-hidden bg-[#050508]">
       {/* 1. Radial Gradient Base */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(10,10,20,1)_0%,_rgba(0,0,0,1)_100%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(10,10,20,1)_0%,rgba(0,0,0,1)_100%)]"></div>
 
       {/* 2. Parallax Container */}
       <div ref={containerRef} className="absolute inset-0 will-change-transform">
@@ -129,17 +129,17 @@ export default function SpaceBackground() {
         {/* 4. Nebula Blobs */}
         <div 
           ref={(el) => (blobsRef.current[0] = el)}
-          className="absolute -top-[10%] -left-[10%] w-[70%] h-[70%] bg-[#00f2ff]/5 blur-[160px] rounded-full will-change-transform"
+          className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-[#00f2ff]/5 blur-[160px] rounded-full will-change-transform"
         ></div>
         
         <div 
           ref={(el) => (blobsRef.current[1] = el)}
-          className="absolute top-[20%] -right-[10%] w-[60%] h-[60%] bg-[#ff4a8d]/5 blur-[140px] rounded-full will-change-transform"
+          className="absolute top-[20%] right-[-10%] w-[60%] h-[60%] bg-[#ff4a8d]/5 blur-[140px] rounded-full will-change-transform"
         ></div>
 
         <div 
           ref={(el) => (blobsRef.current[2] = el)}
-          className="absolute -bottom-[10%] left-[20%] w-[55%] h-[55%] bg-[#006a71]/10 blur-[120px] rounded-full will-change-transform"
+          className="absolute bottom-[-10%] left-[20%] w-[55%] h-[55%] bg-[#006a71]/10 blur-[120px] rounded-full will-change-transform"
         ></div>
 
         <div 
@@ -152,7 +152,7 @@ export default function SpaceBackground() {
       <div className="noise-overlay opacity-[0.03]"></div>
 
       {/* 6. Vignette / Depth Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/40"></div>
     </div>
   );
 }

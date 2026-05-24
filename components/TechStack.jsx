@@ -38,7 +38,7 @@ export default function TechStack() {
   return (
     <section id="tech-stack" className="py-section-gap relative overflow-hidden">
       {/* Section background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/5 blur-[160px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary-container/5 blur-[160px] rounded-full pointer-events-none"></div>
 
       <GSAPReveal start="top 90%">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 relative z-10 gap-4">
@@ -79,7 +79,7 @@ export default function TechStack() {
                   <h3 className="font-display text-lg font-bold text-on-surface leading-tight">{stack.title}</h3>
                 </div>
 
-                <p className="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">
+                <p className="text-on-surface-variant text-sm leading-relaxed mb-8 grow">
                   {stack.description}
                 </p>
                 

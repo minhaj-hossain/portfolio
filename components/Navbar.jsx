@@ -48,7 +48,7 @@ export default function Navbar() {
         style={{ padding, backgroundColor, maxWidth }}
         className={cn(
           "w-full rounded-full border border-white/10 backdrop-blur-xl shadow-2xl pointer-events-auto flex items-center justify-between transition-all duration-500",
-          isOpen ? "rounded-[2rem]" : "rounded-full overflow-hidden",
+          isOpen ? "rounded-4xl" : "rounded-full overflow-hidden",
           isScrolled ? "border-primary-container/20 shadow-primary-container/5" : "border-white/10"
         )}
       >

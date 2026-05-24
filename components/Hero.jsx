@@ -74,11 +74,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-[auto] lg:min-h-[707px] grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-gutter pt-30  py-16 lg:py-section-gap relative overflow-hidden">
+    <section ref={sectionRef} className="min-h-auto lg:min-h-176.75 grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-gutter pt-30  py-16 lg:py-section-gap relative overflow-hidden">
       {/* Background Glow - Scaled for mobile */}
       <div
         ref={glowRef}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-primary-container blur-[80px] md:blur-[160px] rounded-full pointer-events-none z-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-75 h-75 md:w-200 md:h-200 bg-primary-container blur-[80px] md:blur-[160px] rounded-full pointer-events-none z-0"
       ></div>
 
       <div className="lg:col-span-7 space-y-stack-md z-10">
@@ -89,7 +89,7 @@ export default function Hero() {
 
         <h1 ref={headingRef} className="font-display text-4xl sm:text-6xl lg:text-[clamp(3.5rem,7.5vw,7.5rem)] font-black text-on-surface leading-[0.95] tracking-tighter uppercase italic max-w-[12ch]">
           <span className="heading-line block">CRAFTING</span>
-          <span className="heading-line block text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-primary-fixed to-secondary">EXPERIENCES</span>
+          <span className="heading-line block text-transparent bg-clip-text bg-linear-to-r from-primary-container via-primary-fixed to-secondary">EXPERIENCES</span>
           <span className="heading-line block">THAT MOVE</span>
         </h1>
 
@@ -123,7 +123,7 @@ export default function Hero() {
           animateIn={false}
           className="rounded-3xl p-4"
         >
-          <div className="w-full h-[300px] sm:h-[400px] lg:h-[540px] rounded-2xl bg-surface-container flex items-center justify-center border border-white/5 overflow-hidden relative group">
+          <div className="w-full h-75 sm:h-100 lg:h-135 rounded-2xl bg-surface-container flex items-center justify-center border border-white/5 overflow-hidden relative group">
             <Image
               src="/minhaj.png"
               alt="Minhaj Hossain"
@@ -131,13 +131,13 @@ export default function Hero() {
               priority
               className="object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60"></div>
             <div className="absolute inset-0 bg-primary-container/5 mix-blend-overlay"></div>
 
             {/* <p className="absolute bottom-6 left-6 font-mono text-[9px] text-on-surface-variant opacity-50 uppercase tracking-[0.4em] z-10 group-hover:text-primary-container group-hover:opacity-100 transition-all duration-500">
               [ SUBJECT_01 // ENGINEER ]
             </p> */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none border-[1px] border-white/5 z-20"></div>
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none border border-white/5 z-20"></div>
           </div>
           <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 bg-background/60 backdrop-blur-xl p-4 md:p-5 rounded-xl border border-white/10 z-30">
             <p className="font-mono text-[8px] md:text-[9px] text-primary-container mb-1 opacity-70">OS_V0.0.1</p>

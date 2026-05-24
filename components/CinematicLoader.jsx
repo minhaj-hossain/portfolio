@@ -76,7 +76,7 @@ export default function CinematicLoader() {
             scale: 1.05,
             transition: { duration: 0.8, ease: [0.4, 0, 0.2, 1] }
           }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050508]/80 backdrop-blur-sm"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-[#050508]/80 backdrop-blur-sm"
         >
           {/* Subtle scanning line effect */}
           <div className="scanline opacity-20"></div>
@@ -120,7 +120,7 @@ export default function CinematicLoader() {
               {/* Advanced Progress Indicator */}
               <div className="relative w-full h-1 bg-white/5 rounded-full overflow-hidden">
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-primary-container/40 via-primary-container to-primary-fixed-dim"
+                  className="absolute inset-0 bg-linear-to-r from-primary-container/40 via-primary-container to-primary-fixed-dim"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ ease: "linear" }}
@@ -148,7 +148,7 @@ export default function CinematicLoader() {
           </motion.div>
 
           {/* Visual depth elements behind the panel */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] -z-10 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-primary-container/5 blur-[120px] -z-10 rounded-full animate-pulse"></div>
         </motion.div>
       )}
     </AnimatePresence>

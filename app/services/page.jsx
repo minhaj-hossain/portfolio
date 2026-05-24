@@ -107,11 +107,11 @@ export default function ServicesPage() {
       {/* Dynamic Background Blobs - Scaled for mobile */}
       <div 
         ref={blob1Ref}
-        className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary-container/10 blur-[80px] md:blur-[160px] rounded-full pointer-events-none -z-10"
+        className="absolute top-0 left-0 w-75 h-75 md:w-150 md:h-150 bg-primary-container/10 blur-[80px] md:blur-[160px] rounded-full pointer-events-none -z-10"
       ></div>
       <div 
         ref={blob2Ref}
-        className="absolute bottom-0 right-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-secondary/10 blur-[70px] md:blur-[140px] rounded-full pointer-events-none -z-10"
+        className="absolute bottom-0 right-0 w-62.5 h-62.5 md:w-125 md:h-125 bg-secondary/10 blur-[70px] md:blur-[140px] rounded-full pointer-events-none -z-10"
       ></div>
 
       {/* Hero */}
@@ -170,8 +170,8 @@ export default function ServicesPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="lg:w-1/2 relative min-h-[200px] md:min-h-[300px] bg-surface-container rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden kinetic-demo">
-                        <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/40"></div>
+                      <div className="lg:w-1/2 relative min-h-50 md:min-h-75 bg-surface-container rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden kinetic-demo">
+                        <div className="absolute inset-0 bg-linear-to-br from-transparent to-black/40"></div>
                         <div className="text-center relative z-10">
                           <span className={`material-symbols-outlined text-7xl ${service.color} opacity-20 animate-pulse`}>animation</span>
                           <p className="font-mono text-[10px] text-on-surface-variant mt-4 uppercase tracking-[0.2em]">[ MOTION DEMO ]</p>
@@ -227,8 +227,8 @@ export default function ServicesPage() {
           <h4 className="font-mono text-[10px] text-on-surface-variant uppercase mb-stack-md opacity-50 tracking-[0.3em] font-bold">Core Engineering Stack</h4>
         </GSAPReveal>
         <div className="flex gap-gutter overflow-x-auto pb-8 snap-x scrollbar-none">
-          {["TypeScript", "MongoDB", "Tailwind CSS", "Figma", "Node.js", "Express"].map((tech, idx) => (
-            <div key={tech} className="snap-start min-w-[280px]">
+          {["Next.js", "MongoDB", "Tailwind CSS", "Figma ", "Node.js", "Express"].map((tech, idx) => (
+            <div key={tech} className="snap-start min-w-70">
               <InteractiveGlassCard delay={idx * 0.05} side="right">
                 <div className="p-6 flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">

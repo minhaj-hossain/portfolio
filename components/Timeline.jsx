@@ -85,7 +85,7 @@ export default function Timeline() {
         {/* Vertical Line */}
         <div
           ref={lineRef}
-          className="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-container via-primary-fixed to-transparent origin-top will-change-transform"
+          className="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-linear-to-b from-primary-container via-primary-fixed to-transparent origin-top will-change-transform"
         ></div>
 
         <div className="space-y-12 md:space-y-24 relative">

@@ -1,28 +1,46 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import GSAPReveal from "@/components/GSAPReveal";
 import { motion, AnimatePresence } from "framer-motion";
-import { projects } from "@/data/projects";
+// import { projects } from "@/data/projects";
 
 export default function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [activeFilter, setActiveFilter] = useState("ALL")
+  const [projects, setProjects] = useState([])
 
   const allTags = useMemo(() => {
     const tags = new Set(["ALL"]);
     projects.forEach((p) => p.tech.forEach((t) => tags.add(t)));
     return Array.from(tags).sort();
-  }, []);
+  }, [projects]);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "ALL") return projects;
     return projects.filter((p) => p.tech.includes(activeFilter));
-  }, [activeFilter]);
+  }, [activeFilter, projects]);
+
+  useEffect(() => {
+    const projectsFeching = async () => {
+      try {
+        const res = await fetch(`https://portfolio-server-five-rose.vercel.app/projects`);
+        if (!res.ok) throw new Error("Failed to fetch project data");
+
+        const data = await res.json();
+        setProjects(data);
+      } catch (err) {
+        // FIX 3: Log the error or rethrow it cleanly
+        console.error("Error fetching projects:", err);
+      }
+
+    }
+    projectsFeching();
+  }, [])
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-section-gap relative min-h-screen">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-container/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute top-0 right-0 w-150 h-150 bg-primary-container/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
       <GSAPReveal start="top 90%">
         <header className="mb-stack-lg border-l-4 border-primary-container pl-6">
@@ -43,11 +61,10 @@ export default function WorkPage() {
             <button
               key={tag}
               onClick={() => setActiveFilter(tag)}
-              className={`font-mono text-[10px] px-5 py-2 rounded-full border transition-all duration-300 uppercase tracking-widest ${
-                activeFilter === tag 
-                ? "bg-primary-container text-on-primary-container border-primary-container shadow-[0_0_20px_rgba(0,242,255,0.3)]" 
+              className={`font-mono text-[10px] px-5 py-2 rounded-full border transition-all duration-300 uppercase tracking-widest ${activeFilter === tag
+                ? "bg-primary-container text-on-primary-container border-primary-container shadow-[0_0_20px_rgba(0,242,255,0.3)]"
                 : "bg-white/5 text-white/40 border-white/10 hover:border-white/30 hover:text-white"
-              }`}
+                }`}
             >
               {tag}
             </button>

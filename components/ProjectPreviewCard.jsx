@@ -66,9 +66,9 @@ export default function ProjectPreviewCard({
         side={isFeatured ? "center" : (index % 2 === 0 ? "left" : "right")}
         className="h-full flex flex-col group"
       >
-        <div className={`relative overflow-hidden w-full ${isFeatured ? 'aspect-[21/9] md:aspect-[2.4/1]' : 'aspect-video'}`}>
+        <div className={`relative overflow-hidden w-full ${isFeatured ? 'aspect-21/9 md:aspect-[2.4/1]' : 'aspect-video'}`}>
           {/* Image Overlay for Cinematic Depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent z-10 opacity-60"></div>
           <div className="absolute inset-0 bg-background/20 z-0"></div>
           
           <div ref={imageRef} className="relative w-full h-full will-change-transform">
@@ -88,7 +88,7 @@ export default function ProjectPreviewCard({
           ></div>
         </div>
 
-        <div className={`p-8 flex flex-col flex-grow relative z-20 ${isFeatured ? 'md:p-12' : 'p-8'}`}>
+        <div className={`p-8 flex flex-col grow relative z-20 ${isFeatured ? 'md:p-12' : 'p-8'}`}>
           <div className="flex justify-between items-start mb-4">
             <div>
               <span className="font-mono text-[10px] text-primary-container uppercase tracking-[0.3em] font-bold block mb-2">Project_{index + 1}</span>
