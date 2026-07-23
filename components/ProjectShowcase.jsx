@@ -3,29 +3,28 @@
 import GSAPReveal from "@/components/GSAPReveal";
 import ProjectPreviewCard from "@/components/ProjectPreviewCard";
 import { useEffect, useState } from "react";
+import { projects as staticProjects } from "@/data/projects";
 
 export default function ProjectShowcase() {
   // Home page layout: 1 featured hero + 2 secondary cards
-
-  const [projects, setProjects] = useState([]);
-
+  const [projects, setProjects] = useState(staticProjects);
 
   useEffect(() => {
-    const projectsFeching = async () => {
+    const fetchProjects = async () => {
       try {
         const res = await fetch(`https://portfolio-server-five-rose.vercel.app/projects`);
         if (!res.ok) throw new Error("Failed to fetch project data");
 
         const data = await res.json();
-        setProjects(data);
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+        }
       } catch (err) {
-        // FIX 3: Log the error or rethrow it cleanly
-        console.error("Error fetching projects:", err);
+        console.error("Error fetching projects from API, using static data:", err);
       }
-
-    }
-    projectsFeching();
-  }, [])
+    };
+    fetchProjects();
+  }, []);
 
 
 

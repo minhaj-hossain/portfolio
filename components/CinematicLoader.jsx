@@ -10,59 +10,55 @@ import Logo from "./Logo";
  * Uses sessionStorage to ensure it only appears once per session.
  */
 export default function CinematicLoader() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return !sessionStorage.getItem("hasVisitedCinematic");
+  });
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState("Initializing System");
+  const [prefersReducedMotion] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
 
   useEffect(() => {
-    // Check if user has already visited in this session
-    const hasVisited = sessionStorage.getItem("hasVisitedCinematic");
+    if (!isVisible) return;
+
+    // Prevent scrolling while loading
+    document.body.style.overflow = "hidden";
     
-    if (!hasVisited) {
-      setIsVisible(true);
-      // Prevent scrolling while loading
-      document.body.style.overflow = "hidden";
-      
-      // Fake progress animation
-      const duration = 2500; // 2.5 seconds
-      const interval = 20; // 20ms steps
-      const steps = duration / interval;
-      let currentStep = 0;
+    // Fake progress animation
+    const duration = 2500; // 2.5 seconds
+    const interval = 20; // 20ms steps
+    const steps = duration / interval;
+    let currentStep = 0;
 
-      const progressInterval = setInterval(() => {
-        currentStep++;
-        const newProgress = Math.min((currentStep / steps) * 100, 100);
-        setProgress(newProgress);
+    const progressInterval = setInterval(() => {
+      currentStep++;
+      const newProgress = Math.min((currentStep / steps) * 100, 100);
+      setProgress(newProgress);
 
-        // Update status messages
-        if (newProgress > 20 && newProgress < 45) setStatus("Calibrating Motion Core");
-        if (newProgress > 45 && newProgress < 70) setStatus("Syncing Neural Interface");
-        if (newProgress > 70 && newProgress < 90) setStatus("Deploying Architecture");
-        if (newProgress >= 90) setStatus("System Ready");
+      // Update status messages
+      if (newProgress > 20 && newProgress < 45) setStatus("Calibrating Motion Core");
+      if (newProgress > 45 && newProgress < 70) setStatus("Syncing Neural Interface");
+      if (newProgress > 70 && newProgress < 90) setStatus("Deploying Architecture");
+      if (newProgress >= 90) setStatus("System Ready");
 
-        if (currentStep >= steps) {
-          clearInterval(progressInterval);
-          setTimeout(() => {
-            setIsVisible(false);
-            sessionStorage.setItem("hasVisitedCinematic", "true");
-            document.body.style.overflow = "";
-          }, 500);
-        }
-      }, interval);
-
-      return () => {
+      if (currentStep >= steps) {
         clearInterval(progressInterval);
-        document.body.style.overflow = "";
-      };
-    }
-  }, []);
+        setTimeout(() => {
+          setIsVisible(false);
+          sessionStorage.setItem("hasVisitedCinematic", "true");
+          document.body.style.overflow = "";
+        }, 500);
+      }
+    }, interval);
 
-  // Handle prefers-reduced-motion
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-  }, []);
+    return () => {
+      clearInterval(progressInterval);
+      document.body.style.overflow = "";
+    };
+  }, [isVisible]);
 
   if (!isVisible) return null;
 
@@ -148,7 +144,7 @@ export default function CinematicLoader() {
           </motion.div>
 
           {/* Visual depth elements behind the panel */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-primary-container/5 blur-[120px] -z-10 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125  bg-primary-container/5 blur-[120px] -z-10 rounded-full animate-pulse"></div>
         </motion.div>
       )}
     </AnimatePresence>

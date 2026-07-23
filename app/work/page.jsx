@@ -4,11 +4,11 @@ import { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import GSAPReveal from "@/components/GSAPReveal";
 import { motion, AnimatePresence } from "framer-motion";
-// import { projects } from "@/data/projects";
+import { projects as staticProjects } from "@/data/projects";
 
 export default function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState("ALL")
-  const [projects, setProjects] = useState([])
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [projects, setProjects] = useState(staticProjects);
 
   const allTags = useMemo(() => {
     const tags = new Set(["ALL"]);
@@ -22,21 +22,21 @@ export default function WorkPage() {
   }, [activeFilter, projects]);
 
   useEffect(() => {
-    const projectsFeching = async () => {
+    const fetchProjects = async () => {
       try {
         const res = await fetch(`https://portfolio-server-five-rose.vercel.app/projects`);
         if (!res.ok) throw new Error("Failed to fetch project data");
 
         const data = await res.json();
-        setProjects(data);
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(data);
+        }
       } catch (err) {
-        // FIX 3: Log the error or rethrow it cleanly
-        console.error("Error fetching projects:", err);
+        console.error("Error fetching projects from API, using static data:", err);
       }
-
-    }
-    projectsFeching();
-  }, [])
+    };
+    fetchProjects();
+  }, []);
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-section-gap relative min-h-screen">

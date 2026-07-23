@@ -19,9 +19,9 @@ export const projects = [
 
   {
     id: "mediqueue",
-    title: "mediqueue",
+    title: "MediQueue",
     description:
-      "A tutor booking platform where students can browse tutors, book learning sessions, and manage their scheduled classes easily. The system helps avoid scheduling conflicts and provides a smooth learning experience through digital booking management.",
+      "A full-stack medical appointment and queue management platform where patients can browse doctors, schedule appointments, and track real-time clinic queues to eliminate long waiting times.",
     tech: ["NEXT.JS 15", "REACT 19", "MONGODB", "BETTER_AUTH", "JWT", "FRAMER_MOTION", "TAILWIND 4"],
     image: "/projects/mediqueue-banner.png",
     githubLink: "https://github.com/minhaj-hossain/mediqueue",

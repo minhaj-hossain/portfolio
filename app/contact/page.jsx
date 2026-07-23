@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 
 const socials = [
   { name: "GITHUB", href: "https://github.com/minhaj-hossain", color: "text-white" },
-  { name: "LINKEDIN", href: "www.linkedin.com/in/hossain-minhaj", color: "text-white" },
+  { name: "LINKEDIN", href: "https://www.linkedin.com/in/hossain-minhaj", color: "text-white" },
   { name: "X", href: "#", color: "text-white" },
   { name: "FACEBOOK", href: "https://www.facebook.com/minhaj124568", color: "text-white" }
 ];

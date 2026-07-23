@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-8">
           <a 
-            href="https://github.com" 
+            href="https://github.com/minhaj-hossain" 
             target="_blank" 
             rel="noopener noreferrer"
             className="font-display text-xs font-medium text-slate-600 hover:text-[#00f2ff] underline-offset-4 hover:underline transition-all"
@@ -18,7 +18,7 @@ export default function Footer() {
             GITHUB
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/hossain-minhaj" 
             target="_blank" 
             rel="noopener noreferrer"
             className="font-display text-xs font-medium text-slate-600 hover:text-[#00f2ff] underline-offset-4 hover:underline transition-all"
@@ -26,7 +26,9 @@ export default function Footer() {
             LINKEDIN
           </a>
           <a 
-            href="#" 
+            href="https://github.com/minhaj-hossain" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-display text-xs font-medium text-slate-600 hover:text-[#00f2ff] underline-offset-4 hover:underline transition-all"
           >
             SOURCE_CODE
