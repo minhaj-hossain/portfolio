@@ -2,6 +2,14 @@
 
 import GSAPReveal from "@/components/GSAPReveal";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
+import { Terminal, Settings, Database, Code } from "lucide-react";
+
+const iconMap = {
+  terminal: Terminal,
+  settings: Settings,
+  database: Database,
+  code: Code,
+};
 
 const stacks = [
   {
@@ -72,9 +80,10 @@ export default function TechStack() {
                 
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center border border-white/10 group-hover:border-primary-container/30 transition-colors duration-500">
-                    <span className="material-symbols-outlined text-primary-container text-2xl group-hover:scale-110 transition-transform duration-500">
-                      {stack.icon}
-                    </span>
+                    {(() => {
+                      const IconComp = iconMap[stack.icon];
+                      return IconComp ? <IconComp className="w-6 h-6 text-primary-container group-hover:scale-110 transition-transform duration-500" /> : null;
+                    })()}
                   </div>
                   <h3 className="font-display text-lg font-bold text-on-surface leading-tight">{stack.title}</h3>
                 </div>

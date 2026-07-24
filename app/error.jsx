@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import MagneticButton from "@/components/MagneticButton";
+import { AlertTriangle } from "lucide-react";
 
 export default function Error({ error, reset }) {
   const glowRef = useRef(null);
@@ -49,7 +50,7 @@ export default function Error({ error, reset }) {
       >
         <div className="mb-8">
           <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-secondary/20">
-            <span className="material-symbols-outlined text-secondary text-3xl animate-pulse">warning</span>
+            <AlertTriangle className="w-8 h-8 text-secondary animate-pulse" />
           </div>
           
           <h2 className="font-display text-3xl md:text-4xl font-black text-on-surface tracking-tighter uppercase italic mb-4">

@@ -1,10 +1,11 @@
 import MagneticButton from "@/components/MagneticButton";
+import { Boxes, Lock } from "lucide-react";
 
 export default function ContactForm() {
   return (
     <div className="glass-panel  rounded-3xl p-8 lg:p-12  relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-        <span className="material-symbols-outlined text-white text-6xl">sdk</span>
+        <Boxes className="w-16 h-16 text-white" />
       </div>
 
       <div className="mb-stack-md relative z-10">
@@ -43,7 +44,7 @@ export default function ContactForm() {
 
         <div className="flex items-center justify-between pt-stack-sm">
           <div className="hidden md:flex items-center gap-4 text-white/20">
-            <span className="material-symbols-outlined text-sm">lock</span>
+            <Lock className="w-3.5 h-3.5" />
             <span className="font-mono text-[9px] uppercase tracking-[0.3em] font-bold">DATA_SECURE_ENCRYPTED</span>
           </div>
 

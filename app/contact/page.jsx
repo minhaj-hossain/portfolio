@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import GSAPReveal from "@/components/GSAPReveal";
 import ContactForm from "@/components/ContactForm";
+import { Settings2, Network } from "lucide-react";
 
 const socials = [
   { name: "GITHUB", href: "https://github.com/minhaj-hossain", color: "text-white" },
@@ -41,7 +42,7 @@ export default function ContactPage() {
               <div className="glass-panel p-6 rounded-2xl relative overflow-hidden group">
                 <div className="scanline"></div>
                 <h3 className="font-mono text-[10px] text-[#00f2ff] mb-6 flex items-center gap-2 font-bold tracking-[0.2em]">
-                  <span className="material-symbols-outlined text-sm">settings_input_component</span>
+                  <Settings2 className="w-3.5 h-3.5" />
                   CORE_IDENTIFIERS
                 </h3>
                 <div className="space-y-5 opacity-80">
@@ -64,7 +65,7 @@ export default function ContactPage() {
             <GSAPReveal delay={0.1} x={-30} y={0} parallax={20}>
               <div className="glass-panel p-6 rounded-2xl">
                 <h3 className="font-mono text-[10px] text-secondary mb-6 flex items-center gap-2 font-bold tracking-[0.2em]">
-                  <span className="material-symbols-outlined text-sm">hub</span>
+                  <Network className="w-3.5 h-3.5" />
                   NEURAL_NETWORKS
                 </h3>
                 <div className="grid grid-cols-2 gap-3">

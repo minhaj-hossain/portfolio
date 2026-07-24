@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
+import { Code, Rocket } from "lucide-react";
 
 export default function ProjectCard({ project, index }) {
   const imageRef = useRef(null);
@@ -101,7 +102,7 @@ export default function ProjectCard({ project, index }) {
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 font-mono text-[9px] uppercase tracking-widest font-bold py-2.5 px-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
               >
-                <span className="material-symbols-outlined text-sm">code</span>
+                <Code className="w-3.5 h-3.5" />
                 Code
               </a>
             )}
@@ -112,7 +113,7 @@ export default function ProjectCard({ project, index }) {
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 font-mono text-[9px] uppercase tracking-widest font-bold py-2.5 px-4 rounded-lg border border-primary-container/20 bg-primary-container/5 text-primary-container hover:bg-primary-container/10 transition-all duration-500"
               >
-                <span className="material-symbols-outlined text-sm">rocket_launch</span>
+                <Rocket className="w-3.5 h-3.5" />
                 Demo
               </a>
             )}

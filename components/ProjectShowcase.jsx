@@ -4,6 +4,7 @@ import GSAPReveal from "@/components/GSAPReveal";
 import ProjectPreviewCard from "@/components/ProjectPreviewCard";
 import { useEffect, useState } from "react";
 import { projects as staticProjects } from "@/data/projects";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ProjectShowcase() {
   // Home page layout: 1 featured hero + 2 secondary cards
@@ -98,7 +99,7 @@ export default function ProjectShowcase() {
           >
             <div className="absolute inset-0 bg-primary-container/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             <span className="relative font-mono text-xs font-bold uppercase tracking-[0.3em] text-on-surface group-hover:text-primary-container transition-colors">Explorer Archive</span>
-            <span className="material-symbols-outlined relative text-primary-container group-hover:rotate-45 transition-transform duration-500">arrow_outward</span>
+            <ArrowUpRight className="w-5 h-5 relative text-primary-container group-hover:rotate-45 transition-transform duration-500" />
           </a>
         </div>
       </GSAPReveal>

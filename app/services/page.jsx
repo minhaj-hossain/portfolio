@@ -4,6 +4,13 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import GSAPReveal from "@/components/GSAPReveal";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
+import { Database, Palette, Clapperboard, CheckCircle, Code } from "lucide-react";
+
+const serviceIconMap = {
+  database: Database,
+  design_services: Palette,
+  animation: Clapperboard,
+};
 
 const services = [
   {
@@ -153,7 +160,10 @@ export default function ServicesPage() {
                     <div className="flex flex-col lg:flex-row gap-stack-lg relative z-10">
                       <div className="lg:w-1/2 flex flex-col justify-center kinetic-content">
                         <div className={`${service.bgColor} p-4 rounded-xl self-start mb-stack-md border border-white/5`}>
-                          <span className={`material-symbols-outlined ${service.color} text-4xl`}>{service.icon}</span>
+                          {(() => {
+                            const IconComp = serviceIconMap[service.icon];
+                            return IconComp ? <IconComp className={`w-10 h-10 ${service.color}`} /> : null;
+                          })()}
                         </div>
                         <h3 className="font-display text-3xl md:text-5xl font-black text-on-surface mb-4 tracking-tighter uppercase">{service.title}</h3>
                         <p className="font-sans text-base md:text-lg text-on-surface-variant mb-6 md:mb-stack-md max-w-lg leading-relaxed">
@@ -173,7 +183,7 @@ export default function ServicesPage() {
                       <div className="lg:w-1/2 relative min-h-50 md:min-h-75 bg-surface-container rounded-2xl flex items-center justify-center border border-white/5 overflow-hidden kinetic-demo">
                         <div className="absolute inset-0 bg-linear-to-br from-transparent to-black/40"></div>
                         <div className="text-center relative z-10">
-                          <span className={`material-symbols-outlined text-7xl ${service.color} opacity-20 animate-pulse`}>animation</span>
+                          <Clapperboard className={`w-16 h-16 ${service.color} opacity-20 animate-pulse`} />
                           <p className="font-mono text-[10px] text-on-surface-variant mt-4 uppercase tracking-[0.2em]">[ MOTION DEMO ]</p>
                         </div>
                         <div className="scanline"></div>
@@ -183,7 +193,10 @@ export default function ServicesPage() {
                     <div className="relative z-10">
                       <div className="flex justify-between items-start mb-6">
                         <div className={`${service.bgColor} p-4 rounded-xl border border-white/5`}>
-                          <span className={`material-symbols-outlined ${service.color} text-4xl`}>{service.icon}</span>
+                          {(() => {
+                            const IconComp = serviceIconMap[service.icon];
+                            return IconComp ? <IconComp className={`w-10 h-10 ${service.color}`} /> : null;
+                          })()}
                         </div>
                         <span className={`font-mono text-[10px] ${service.color} px-3 py-1 ${service.bgColor} rounded border border-white/10 uppercase tracking-widest font-bold`}>{service.category}</span>
                       </div>
@@ -196,7 +209,7 @@ export default function ServicesPage() {
                         <ul className="space-y-3">
                           {service.features.map(feature => (
                             <li key={feature} className="flex items-center gap-3 text-on-surface/80">
-                              <span className={`material-symbols-outlined ${service.color} text-lg`}>check_circle</span>
+                              <CheckCircle className={`w-5 h-5 ${service.color}`} />
                               <span className="font-mono text-[11px] uppercase tracking-wide">{feature}</span>
                             </li>
                           ))}
@@ -232,7 +245,7 @@ export default function ServicesPage() {
               <InteractiveGlassCard delay={idx * 0.05} side="right">
                 <div className="p-6 flex items-center gap-4 group">
                   <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary-container/10 transition-colors">
-                     <span className="material-symbols-outlined text-primary-container">code</span>
+                     <Code className="w-5 h-5 text-primary-container" />
                   </div>
                   <div>
                     <div className="font-display text-sm font-bold">{tech}</div>
