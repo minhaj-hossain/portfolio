@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
-import { Code, Rocket } from "lucide-react";
+import { Code, Rocket, Eye, ArrowRight } from "lucide-react";
 
 export default function ProjectCard({ project, index }) {
   const imageRef = useRef(null);
@@ -80,9 +81,14 @@ export default function ProjectCard({ project, index }) {
         
         <div className="p-stack-md flex flex-col grow bg-surface-container-low/50 border-t border-white/5 relative z-10">
           <div className="flex justify-between items-start mb-stack-sm">
-            <h2 className="font-display text-xl font-bold text-white group-hover:text-primary-container transition-colors uppercase tracking-tight">{project.title}</h2>
+            <Link href={`/work/${project.id}`} className="group/title">
+              <h2 className="font-display text-xl font-bold text-white group-hover/title:text-primary-container transition-colors uppercase tracking-tight flex items-center gap-2">
+                {project.title}
+                <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/title:opacity-100 group-hover/title:translate-x-0 transition-all text-primary-container" />
+              </h2>
+            </Link>
           </div>
-          <p className="font-sans text-sm text-on-surface-variant mb-stack-md leading-relaxed">
+          <p className="font-sans text-sm text-on-surface-variant mb-stack-md leading-relaxed line-clamp-3">
             {project.description}
           </p>
           
@@ -94,26 +100,35 @@ export default function ProjectCard({ project, index }) {
             ))}
           </div>
 
-          <div className="mt-auto flex gap-3">
-            {project.githubLink && (
+          <div className="mt-auto grid grid-cols-3 gap-2">
+            <Link
+              href={`/work/${project.id}`}
+              className="flex items-center justify-center gap-1.5 font-mono text-[9px] uppercase tracking-wider font-semibold py-2 px-2.5 rounded-lg border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+            >
+              <Eye className="w-3 h-3 text-slate-400" />
+              Details
+            </Link>
+            {project.githubLink ? (
               <a 
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 font-mono text-[9px] uppercase tracking-widest font-bold py-2.5 px-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
+                className="flex items-center justify-center gap-1.5 font-mono text-[9px] uppercase tracking-wider font-semibold py-2 px-2.5 rounded-lg border border-white/10 bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white transition-all duration-300"
               >
-                <Code className="w-3.5 h-3.5" />
+                <Code className="w-3 h-3" />
                 Code
               </a>
+            ) : (
+              <div />
             )}
             {project.liveLink && (
               <a 
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 font-mono text-[9px] uppercase tracking-widest font-bold py-2.5 px-4 rounded-lg border border-primary-container/20 bg-primary-container/5 text-primary-container hover:bg-primary-container/10 transition-all duration-500"
+                className="flex items-center justify-center gap-1.5 font-mono text-[9px] uppercase tracking-wider font-semibold py-2 px-2.5 rounded-lg border border-white/10 bg-white/5 text-primary-container hover:bg-primary-container/10 transition-all duration-300"
               >
-                <Rocket className="w-3.5 h-3.5" />
+                <Rocket className="w-3 h-3" />
                 Demo
               </a>
             )}

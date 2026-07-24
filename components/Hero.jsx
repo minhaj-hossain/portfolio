@@ -82,19 +82,19 @@ export default function Hero() {
       ></div>
 
       <div className="lg:col-span-7 space-y-stack-md z-10">
-        <div className="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary-container/20 bg-primary-container/5">
+        <div className="hero-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary-container/25 bg-primary-container/10">
           <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00f2ff]"></span>
-          <span className="font-mono text-[9px] text-primary-container uppercase tracking-widest font-bold">CORE_SYSTEM_ACTIVE</span>
+          <span className="font-mono text-[10px] text-primary-container uppercase tracking-[0.25em] font-bold">FULL-STACK MERN ENGINEER</span>
         </div>
 
-        <h1 ref={headingRef} className="font-display text-4xl sm:text-6xl lg:text-[clamp(3.5rem,7.5vw,7.5rem)] font-black text-on-surface leading-[0.95] tracking-tighter uppercase italic max-w-[12ch]">
+        <h1 ref={headingRef} className="font-display text-4xl sm:text-5xl lg:text-[clamp(2.75rem,4.8vw,5.5rem)] xl:text-[clamp(3.2rem,5.2vw,6.2rem)] font-black text-on-surface leading-[0.95] tracking-tighter uppercase italic">
           <span className="heading-line block">CRAFTING</span>
           <span className="heading-line block text-transparent bg-clip-text bg-linear-to-r from-primary-container via-primary-fixed to-secondary">EXPERIENCES</span>
           <span className="heading-line block">THAT MOVE</span>
         </h1>
 
-        <p className="hero-desc font-sans text-lg text-on-surface-variant max-w-lg leading-relaxed">
-          Full-stack MERN engineer from Bangladesh. Architecting high-performance systems where clean logic meets fluid, human-centric motion.
+        <p className="hero-desc font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+          Full-Stack MERN Engineer specializing in Next.js, React, and scalable cloud architectures. Crafting high-performance web systems where robust engineering meets fluid, human-centric design.
         </p>
 
         <div className="hero-btns-wrapper flex flex-wrap gap-4 pt-4">

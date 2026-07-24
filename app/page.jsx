@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AboutSection from "@/components/AboutSection";
 import TechStack from "@/components/TechStack";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import Timeline from "@/components/Timeline";
@@ -8,11 +9,11 @@ export default function Home() {
   return (
     <main className="max-w-7xl mx-auto px-6">
       <Hero />
+      <AboutSection />
       <TechStack />
       <ProjectShowcase />
       <Timeline />
       <QuoteSection />
-
     </main>
   );
 }

@@ -6,7 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import InteractiveGlassCard from "@/components/InteractiveGlassCard";
-import { ArrowRight, Code, Rocket } from "lucide-react";
+import { ArrowRight, Code, Rocket, Eye } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -17,6 +17,7 @@ if (typeof window !== "undefined") {
  * A reusable cinematic project card for showcasing work.
  */
 export default function ProjectPreviewCard({ 
+  id,
   image, 
   title, 
   description, 
@@ -124,15 +125,24 @@ export default function ProjectPreviewCard({
               ))}
             </div>
 
-            <div className="flex gap-4 w-full md:w-auto">
+            <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+              {id && (
+                <Link
+                  href={`/work/${id}`}
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-semibold py-2.5 px-5 rounded-full border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+                >
+                  <Eye className="w-3.5 h-3.5 text-slate-400" />
+                  Details
+                </Link>
+              )}
               {githubLink && (
                 <a 
                   href={githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-bold py-3 px-6 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500"
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-semibold py-2.5 px-5 rounded-full border border-white/10 bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white transition-all duration-300"
                 >
-                  <Code className="w-4 h-4" />
+                  <Code className="w-3.5 h-3.5" />
                   Code
                 </a>
               )}
@@ -141,9 +151,9 @@ export default function ProjectPreviewCard({
                   href={liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-bold py-3 px-6 rounded-full border border-primary-container/20 bg-primary-container/5 text-primary-container hover:bg-primary-container/10 hover:border-primary-container/40 transition-all duration-500 shadow-[0_0_15px_rgba(0,242,255,0.1)]"
+                  className="flex-1 md:flex-none flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] font-semibold py-2.5 px-5 rounded-full border border-white/10 bg-white/5 text-primary-container hover:bg-primary-container/10 transition-all duration-300"
                 >
-                  <Rocket className="w-4 h-4" />
+                  <Rocket className="w-3.5 h-3.5" />
                   Demo
                 </a>
               )}

@@ -29,8 +29,9 @@ export default function ProjectShowcase() {
 
 
 
-  const featuredProject = projects.find((p) => p.featured);
-  const secondaryProjects = projects.filter((p) => !p.featured).slice(0, 2);
+  const featuredProjects = projects.filter((p) => p.featured);
+  const featuredProject = featuredProjects[0];
+  const secondaryProjects = featuredProjects.slice(1, 3);
 
   return (
     <section id="work" className="py-section-gap relative overflow-hidden">

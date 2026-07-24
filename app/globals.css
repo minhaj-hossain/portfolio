@@ -20,6 +20,8 @@
 
   --tertiary: #efffbb;
   --tertiary-container: #bdec00;
+  --tertiary-fixed: #deff96;
+  --tertiary-fixed-dim: #abd600;
   --on-tertiary: #283500;
   --on-tertiary-container: #516800;
 
@@ -70,6 +72,8 @@
 
   --color-tertiary: var(--tertiary);
   --color-tertiary-container: var(--tertiary-container);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
   --color-on-tertiary: var(--on-tertiary);
   --color-on-tertiary-container: var(--on-tertiary-container);
 

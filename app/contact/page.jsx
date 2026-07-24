@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import GSAPReveal from "@/components/GSAPReveal";
 import ContactForm from "@/components/ContactForm";
-import { Settings2, Network } from "lucide-react";
+import { Settings2, Network, Phone, MessageSquare } from "lucide-react";
 
 const socials = [
   { name: "GITHUB", href: "https://github.com/minhaj-hossain", color: "text-white" },
@@ -45,7 +45,15 @@ export default function ContactPage() {
                   <Settings2 className="w-3.5 h-3.5" />
                   CORE_IDENTIFIERS
                 </h3>
-                <div className="space-y-5 opacity-80">
+                <div className="space-y-4 opacity-90">
+                  <div className="flex justify-between border-b border-white/5 pb-3 group/item items-center">
+                    <span className="font-mono text-[11px] text-slate-500 flex items-center gap-1.5"><Phone className="w-3 h-3 text-[#00f2ff]" /> PHONE</span>
+                    <a href="tel:+8801700000000" className="font-mono text-[11px] text-on-surface hover:text-[#00f2ff] transition-colors">+880 (17) 0000-0000</a>
+                  </div>
+                  <div className="flex justify-between border-b border-white/5 pb-3 group/item items-center">
+                    <span className="font-mono text-[11px] text-slate-500 flex items-center gap-1.5"><MessageSquare className="w-3 h-3 text-tertiary-fixed-dim" /> WHATSAPP</span>
+                    <a href="https://wa.me/8801700000000" target="_blank" rel="noopener noreferrer" className="font-mono text-[11px] text-tertiary-fixed-dim hover:underline transition-all">CHAT ON WHATSAPP</a>
+                  </div>
                   <div className="flex justify-between border-b border-white/5 pb-3 group/item">
                     <span className="font-mono text-[11px] text-slate-500">LOCATION</span>
                     <span className="font-mono text-[11px] text-on-surface group-hover:text-[#00f2ff] transition-colors">BANGLADESH // REMOTE</span>
